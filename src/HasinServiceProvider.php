@@ -2,9 +2,9 @@
 
 namespace Illuminate\Dscmall\Hasin;
 
+use Illuminate\Dscmall\Hasin\Database\Eloquent\Builder;
 use Illuminate\Dscmall\Hasin\Database\Eloquent\BuilderMixin;
 use Illuminate\Dscmall\Hasin\Database\Eloquent\RelationMixin;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 
