@@ -1,6 +1,6 @@
 <?php
 
-namespace BiiiiiigMonster\Hasin\Database\Eloquent;
+namespace Illuminate\Dscmall\Hasin\Database\Eloquent;
 
 use Closure;
 use Illuminate\Database\Eloquent\Builder;

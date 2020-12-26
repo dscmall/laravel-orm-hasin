@@ -2,28 +2,18 @@
 
 # LARAVEL HASIN
 
-<p>
-    <a href="https://github.com/biiiiiigmonster/hasin/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-7389D8.svg?style=flat" ></a>
-    <a href="https://github.com/biiiiiigmonster/hasin/releases" ><img src="https://img.shields.io/github/release/biiiiiigmonster/hasin.svg?color=4099DE" /></a> 
-    <a href="https://packagist.org/packages/biiiiiigmonster/hasin"><img src="https://img.shields.io/packagist/dt/biiiiiigmonster/hasin.svg?color=" /></a> 
-    <a><img src="https://img.shields.io/badge/php-7+-59a9f8.svg?style=flat" /></a> 
-</p>
-
-</div>
-
 `hasin`是一个基于`where in`语法实现的`Laravel ORM`关联关系查询的扩展包，部分业务场景下可以替代`Laravel ORM`中基于`where exists`语法实现的`has`，以获取更高的性能。
-
 
 ## 环境
 
-- PHP >= 7
-- laravel >= 5.5
+- PHP >= 7.1
+- laravel >= 5.8
 
 
 ## 安装
 
 ```bash
-composer require biiiiiigmonster/hasin
+composer require dscmall/laravel-orm-hasin
 ```
 
 ## 简介
@@ -72,8 +62,6 @@ $products = Product::has('skus')->paginate(10);
 $products = Product::hasIn('skus')->paginate(10);
 ```
 
-> `Laravel ORM`十种关联关系多达248种实际业务case sql输出可查看[有道云笔记](https://note.youdao.com/noteshare?id=882bfd7ccdf1370c55326a33333c6f62)
-
 ## 使用
 
 在配置文件app.php添加配置，自动注册服务
@@ -84,7 +72,7 @@ $products = Product::hasIn('skus')->paginate(10);
     'providers' => [
         // ...
         
-        BiiiiiigMonster\Hasin\HasinServiceProvider::class,// hasin扩展包引入
+        Illuminate\Dscmall\Hasin\HasinServiceProvider::class,// hasin扩展包引入
     ],
 ```
 此扩展方法`hasIn(hasMorphIn)`支持`Laravel ORM`中的所有关联关系，入参调用及内部实现流程与框架的`has(hasMorph)`完全一致，可安全使用或替换
@@ -145,9 +133,6 @@ Product::hasIn('attrs.values')->get();
 ```php
 Category::hasIn('children')->get();
 ```
-
-## 联系交流
-wx：biiiiiigmonster(备注：hasin)
 
 ## 协议
 [MIT 协议](LICENSE)
