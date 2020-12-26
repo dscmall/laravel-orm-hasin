@@ -13,5 +13,12 @@
             "Illuminate\\Dscmall\\Hasin\\": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Illuminate\\Dscmall\\Hasin\\HasinServiceProvider"
+            ]
+        }
+    }
 }
